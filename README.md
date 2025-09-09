@@ -4,7 +4,7 @@
 - Proskjektet demonstrerer: app med Props,komponenter,Router for navigasjon
 - container med counter som kan økes og nulltstiles
 - Side med Home,Todo - liste med usestate og css styling
-- API søk ( jikan Anime API)
+- API søk ( jikan Anime API fra MyAnimeList)
 - title id år, rating osv liste med renderring .map + key
 - viser Naruto, Hajime no ippo osv
 - kontollert input kan søke add, markere eller fjernes, kan brukes til å skrive ned det du vil ha på listen din
