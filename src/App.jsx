@@ -7,10 +7,10 @@ import Header from "./components/Header"; // component
 import AnimeCard from "./components/AnimeCard"; // component
 
 const anime = [
-  { id: 1, title: "Naruto", year: 2002, rating: 8.4 }, // rating out of 10 from imdb
+  { id: 1, title: "Naruto", year: 2002, rating: 8.4 }, // rating out of 10 from MyAnielist( via Jikan API)
   { id: 2, title: "Attack on Titan", year: 2013, rating: 9.1 },
   { id: 3, title: "Hajime no ippo", year: 2000, rating: 8.8 },
-  { id: 4, title: "Hunter X Hunter", year: 2011, rating: 9.0},
+  { id: 4, title: "Hunter X Hunter", year: 2011, rating: 9.0 },
 ];
 
 export default function App() {
@@ -30,10 +30,7 @@ export default function App() {
                   Clicked {count} times
                 </button>
 
-                <button className="reset-button"
-                  onClick={() => setCount(0)}
-                  
-                >
+                <button className="reset-button" onClick={() => setCount(0)}>
                   Reset
                 </button>
 
@@ -55,7 +52,7 @@ export default function App() {
           {/*Todo page */}
           <Route path="/todo" element={<Todo />} />
 
-          <Route path="/api" element={<ApiList />}/>
+          <Route path="/api" element={<ApiList />} />
         </Routes>
       </main>
     </>
