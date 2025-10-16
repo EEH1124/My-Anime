@@ -53,7 +53,7 @@ export default function ApiList() {
               alt={item.title}
               width="60"
               height="84"
-             className="cover"
+              className="cover"
             />
             <div>
               <strong>{item.title}</strong>

@@ -53,6 +53,7 @@ export default function App() {
           <Route path="/todo" element={<Todo />} />
 
           <Route path="/api" element={<ApiList />} />
+          <Route path="*"element={<p>Page not found(404)</p>}/>
         </Routes>
       </main>
     </>

@@ -13,7 +13,12 @@ body {
 
 header { text-align: center; padding: 1rem 0; }
 nav a { margin-right: 12px; color:#9fb4ff; text-decoration: none; }
-nav a hover { text-decoration: underline;}
+nav a:hover { text-decoration: underline;}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
 
 
 button {
@@ -45,6 +50,8 @@ button + button {
 
 
 }
+
+
 
 .reset-button:focus-visible {
   outline: 2px solid #fff;
