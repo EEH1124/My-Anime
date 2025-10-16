@@ -7,18 +7,18 @@ export default function Todo() {
   function addTodo() {
     const v = text.trim();
     if (!v) return;
-    setTodos((prev) => [...prev, { text: v, done: false }]);
+    setTodos((prev) => [...prev, {id:crypto.randomUUID(),text: v, done: false }]);
     setText("");
   }
 
-  function toggleDone(index) {
+  function toggleDone(id) {
     setTodos((prev) =>
-      prev.map((t, i) => (i === index ? { ...t, done: !t.done } : t))
+      prev.map(t => (t.id === id ? { ...t, done: !t.done } : t))
     );
   }
 
-  function removeTodo(index) {
-    setTodos((prev) => prev.filter((t, i) => i !== index));
+  function removeTodo(id) {
+    setTodos((prev) => prev.filter(t => t.id!== id));
   }
 
   return (
@@ -30,15 +30,15 @@ export default function Todo() {
         onChange={(e) => setText(e.target.value)}
         placeholder="Write your list here"
       />
-      <button onClick={addTodo}>Add</button>
+      <button type="button" onClick={addTodo}>Add</button>
 
       <ul style={{ marginTop: "0,8rem" }}>
-        {todos.map((t, i) => (
-          <li key={i}>
+        {todos.map(t => (
+          <li key={t.id}>
             <input
               type="checkBox"
               checked={t.done}
-              onChange={() => toggleDone(i)}
+              onChange={() => toggleDone(t.id)}
             />
             <span
              className="todo-text"
@@ -47,9 +47,10 @@ export default function Todo() {
             >
             {t.text}
             </span>
-            <button
+            
+            <button type="button"
             className="todo-delete"
-             onClick={() => removeTodo(i)}
+             onClick={() => removeTodo(t.id)}
              aria-label="Delete todo"
              title="Delete"
              >
